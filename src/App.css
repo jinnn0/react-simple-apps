@@ -1,7 +1,115 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cart * {
+  /* border: 1px solid black; */
+}
+
+.cart {
+  width: 1000px;
+  height: 600px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+  margin: 100px auto;
+  padding: 30px;
+}
+
+.cart-title {
+  border-bottom: 2px solid rgba(67, 67, 67, 0.111);
+  line-height: 7rem;
+  font-size: 3rem;
+  color: #343434d0;
+}
+
+.cart-items {
+  height: 270px;
+  list-style-type: none;
+  padding: 30px 30px 30px 0;
+}
+
+.cart-item {
+  font-size: 1.3rem;
+  height: 60px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-item .item-name,
+.cart-item .item-price,
+.cart-item .quantity,
+.cart-item .sub-total {
+  flex: 1;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  width: 110px;
+}
+
+.quantity span {
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+  margin: 0 10px 0 10px;
+}
+
+.quantity button {
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: rgb(221, 229, 233);
+  outline: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.05s ease-in-out;
+}
+
+.quantity button:disabled {
+  background-color: rgba(221, 229, 233, 0.541);
+}
+
+button:hover {
+  transform: scale(0.95);
+}
+
+.grand-total {
+  text-align: right;
+  margin-top: 2rem;
+  line-height: 4rem;
+  padding-right: 7rem;
+}
+
+.grand-total span {
+  display: inline-block;
+}
+
+.grand-total span:nth-child(2) {
+  width: 135px;
+  text-align: left;
+}
+
+/* react default */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
