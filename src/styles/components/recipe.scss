@@ -5,13 +5,13 @@
         width: 1450px;
         height: 100%;
         margin-top: 5rem;
+        margin-bottom: 5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .search-bar {
-        // background-color: rgb(241, 223, 190);
         width: 100%;
         height: 90px;
         display: grid;
@@ -37,7 +37,6 @@
     }
 
     .recipe-items {
-        // background-color: rgb(213, 255, 255);
         height: 90%;
         display: grid;
         grid-template-columns: repeat(3, minmax(460px, 1fr));
@@ -65,14 +64,11 @@
             }
 
             .recipe-lists {
-                // background-color: paleturquoise;
                  width: 77%;
-                //  text-align: center;
                  list-style-type: none;
             }
 
             .recipe-list {
-                // background-color: pink;
                 margin-bottom: .7rem;
                 line-height: 1.7rem;
 

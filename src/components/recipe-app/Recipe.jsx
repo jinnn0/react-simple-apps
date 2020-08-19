@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import RecipeItem from './RecipeItem.jsx'
 
 function Recipe() {
     const APP_ID = '083af12b'
@@ -6,7 +7,7 @@ function Recipe() {
 
     const [recipes, setRecipes] = useState([])
     const [search, setSearch] = useState("")
-    const [query, setQuery] = useState('chicken')
+    const [query, setQuery] = useState('pasta')
     const [numberOfItems, setNumberofItems] = useState(9)
 
     useEffect(()=>{
@@ -67,25 +68,3 @@ function Recipe() {
 }
 
 export default Recipe
-
-
-
-
-
-
-
-function RecipeItem({title, url, image, calories, ingredients}){
-
-    return (
-        <div className="recipe-item">
-          <h1 className="title">{title}</h1>
-          <a href={url}><img className="food-image" src={image} alt="food image"/></a>
-          <p className="calories">{calories.toFixed(2)} calories</p>
-          <ul className="recipe-lists">
-              {ingredients.map((ingredient, index) => (
-                 <li className="recipe-list" key={index}><span>{index+1}. </span>{ingredient.text}</li>
-             ))}
-          </ul>
-        </div>
-    )
-}
