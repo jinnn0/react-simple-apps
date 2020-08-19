@@ -1,8 +1,9 @@
 .recipe-app {
     height: auto;
-
+ 
     .app {
-        width: 1450px;
+        // width: 1450px;
+        width: 100%;
         height: 100%;
         margin-top: 5rem;
         margin-bottom: 5rem;
@@ -39,7 +40,8 @@
     .recipe-items {
         height: 90%;
         display: grid;
-        grid-template-columns: repeat(3, minmax(460px, 1fr));
+        // grid-template-columns: repeat(3, minmax(460px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: minmax(500px, auto);
 
 

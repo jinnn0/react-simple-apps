@@ -1,0 +1,89 @@
+ .todo-app {
+    //  .title { background-color: rgb(254, 242, 220); }
+    //  .todo-icon { background-color: rgb(255, 255, 190);} 
+    //  .add-todo { background-color: rgb(220, 255, 220); }
+    //  .todos {background-color: rgb(227, 227, 252);}
+    //  .todo-items { background-color: pink; }
+    //  .todo-item { background-color: rgb(255, 233, 191); }
+     .trash { background-color: rgb(184, 184, 232) }
+
+     .app {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+            margin-bottom: 2.5rem;
+            font-weight: bold;
+            font-size: 1.4rem;
+
+            .todo-icon {
+                margin-right: .5rem;
+            }
+        }
+
+        .add-todo {
+            width: 70%;
+            height: 45px;
+            position: relative;
+            display: flex;
+            margin-bottom: 1.3rem;
+
+            input {
+                flex: 1;
+                border-radius: 20px;
+                // padding-left: 20px;
+                text-indent: 20px;
+                border: none;
+                box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.07);
+            }
+
+            .add {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+
+                .add-icon {
+                    color: rgba(98, 108, 255, 0.748);
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .todos {
+            width: 80%;
+
+            .todo-items {
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .todo-item {
+                padding: 10px;
+                padding-left: 20px;
+                margin-bottom: .7rem;
+                border-radius: 20px;
+                box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.07);
+                display: flex;
+
+                .trash {
+                    margin-left: auto;
+                    color: rgb(172, 176, 238);
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+        }
+     }
+ }
