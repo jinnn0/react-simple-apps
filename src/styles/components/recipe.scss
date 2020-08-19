@@ -1,0 +1,90 @@
+.recipe-app {
+    height: auto;
+
+    .app {
+        width: 1450px;
+        height: 100%;
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-bar {
+        // background-color: rgb(241, 223, 190);
+        width: 100%;
+        height: 90px;
+        display: grid;
+        place-items: center;
+
+        form {
+            width: 30%;
+            height: 40%;
+            display: flex;
+        }
+        input {
+            height: 100%;
+            margin-right: 5px;
+            border-radius: 30px;
+            flex: 1;
+            border: 1px solid black;
+            padding-left: 20px;
+            outline: none;
+        }
+        input::placeholder{
+            color: rgba(0, 0, 0, 0.406);
+        }
+    }
+
+    .recipe-items {
+        // background-color: rgb(213, 255, 255);
+        height: 90%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(460px, 1fr));
+        grid-auto-rows: minmax(500px, auto);
+
+
+        .recipe-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem .7rem;
+
+            .title,
+            .food-image,
+            .calories {
+                margin-bottom: 2rem;
+            }
+
+            .title {
+                text-align: center;
+            }
+
+            .food-image {
+                border-radius: 20px;
+            }
+
+            .recipe-lists {
+                // background-color: paleturquoise;
+                 width: 77%;
+                //  text-align: center;
+                 list-style-type: none;
+            }
+
+            .recipe-list {
+                // background-color: pink;
+                margin-bottom: .7rem;
+                line-height: 1.7rem;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .load-more {
+        padding: .6rem 1.7rem;
+        border-radius: 35px;
+    }
+}

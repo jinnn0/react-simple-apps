@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import CartItem from "./CartItem";
 
-function Cart({ initialItems }) {
+let initialItems = [
+  { id: 1, name: "Salmon", price: 3.99, qty: 0},
+  { id: 2, name: "Oyster Sauce", price: 2.49, qty: 0},
+  { id: 3, name: "Noodle", price: 0.8, qty: 0}
+];
+
+
+
+function Cart() {
   let initialState = JSON.parse(window.localStorage.getItem("items"));
   const [items, setItems] = useState(initialState || initialItems);
 
@@ -25,18 +33,20 @@ function Cart({ initialItems }) {
     .toFixed(2);
 
   return (
-    <div className="cart">
-      <h1 className="cart-title">Shopping Cart</h1>
-      <ul className="cart-items">
-        {items.map((item) => (
-          <CartItem key={item.id} updateQty={updateQty} {...item} />
-        ))}
-      </ul>
+    <div className="shopping-cart-app app-container">
+      <div className="app">
+        <h1 className="cart-title">Shopping Cart</h1>
+        <ul className="cart-items">
+          {items.map((item) => (
+            <CartItem key={item.id} updateQty={updateQty} {...item} />
+          ))}
+        </ul>
 
-      <h1 className="grand-total">
-        <span>Total: €</span>
-        <span>{grandTotal}</span>
-      </h1>
+        <h1 className="grand-total">
+          <span>Total: €</span>
+          <span>{grandTotal}</span>
+        </h1>
+      </div>
     </div>
   );
 }
