@@ -1,15 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-function TodoForm({todoItem}) {
+function TodoForm({addTodo}) {
+    const [todoItem, setTodoItem] = useState({
+        id: undefined,
+        task: "",
+        completed: false
+    })
+
     const handleInput = (e) => {
-        setTodoItem({...todoItem, id: Date.now(), task: e.target.value})
+        setTodoItem({...todoItem, task: e.target.value})
     }
 
     const handleSubmit = (e)  => {
         e.preventDefault()
-        setTodoLists([...todoLists, todoItem])
-        setTodoItem({...todoItem, task: ""})
-        console.log("submit todo");
+        if(todoItem.task.trim()){
+            addTodo({...todoItem,  id: Date.now()})
+            setTodoItem({...todoItem, task: ""})
+        }
     }
 
     return (

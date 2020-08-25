@@ -1,15 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import TodoItem from './TodoItem.jsx';
+import TodoForm from './TodoForm.jsx';
+import TodoItems from './TodoItems.jsx';
 
 const localStorageKey = "todo items"
 
 function Todo() {
     const [todoLists, setTodoLists] = useState([])
-    const [todoItem, setTodoItem] = useState({
-        id: undefined,
-        task: "",
-        completed: false
-    })
 
     useEffect(()=>{
         setTodoLists(JSON.parse(localStorage.getItem(localStorageKey)))
@@ -19,19 +15,27 @@ function Todo() {
         localStorage.setItem(localStorageKey, JSON.stringify(todoLists))
     }, [todoLists])
 
-    const handleInput = (e) => {
-        setTodoItem({...todoItem, id: Date.now(), task: e.target.value})
-    }
-
-    const handleSubmit = (e)  => {
-        e.preventDefault()
+    const addTodo = (todoItem) => {
         setTodoLists([...todoLists, todoItem])
-        setTodoItem({...todoItem, task: ""})
-        console.log("submit todo");
     }
 
     const removeTodo = (id) => {
         setTodoLists(todoLists.filter(todoItem => todoItem.id !== id))
+    }
+
+    const toggleComplete = (id) => {
+        let completUpdated = todoLists.map(todoItem => {
+            if(todoItem.id === id) {
+                return {
+                    ...todoItem,
+                    completed: !todoItem.completed
+                }
+            }
+
+            return todoItem
+        })
+
+        setTodoLists(completUpdated)
     }
 
     return (
@@ -42,29 +46,12 @@ function Todo() {
                     Todo
                 </div>
 
-                <form className="add-todo" onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="add new todo"
-                        onChange={handleInput}
-                        value={todoItem.task}
-                     />
-                    <button className="add">
-                      <i className="fas fa-plus-circle add-icon"></i>
-                    </button>
-                </form>
-
-                <div className="todos">
-                    <ul className="todo-items">
-                        {todoLists.map(todoItem => (
-                            <TodoItem
-                                key={todoItem.id}
-                                todoItem={todoItem}
-                                removeTodo={removeTodo}
-                            />
-                        ))}
-                    </ul>
-                </div>
+                <TodoForm addTodo={addTodo}/>
+                <TodoItems
+                    todoLists={todoLists}
+                    removeTodo={removeTodo}
+                    toggleComplete={toggleComplete}
+                />
             </div>
         </div>
     )
