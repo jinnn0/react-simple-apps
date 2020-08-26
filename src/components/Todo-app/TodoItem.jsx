@@ -12,7 +12,10 @@ function TodoItem({todoItem, removeTodo, toggleComplete}){
     return (
         <li className="todo-item">
             <span className="check">
-                <i className={"far fa-check-circle check-icon " + (todoItem.completed ?  "completed" : "")}
+                <i className={
+                    "far fa-check-circle check-icon " +
+                    (todoItem.completed ?  "completed" : "")
+                }
                     onClick={handleToggleComplete}
                 ></i>
             </span>
