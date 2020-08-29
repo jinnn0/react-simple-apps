@@ -8,20 +8,19 @@ function MovieApp() {
     const [movies, setMovies] = useState([])
     const [search, setSearch] = useState('')
     const [query, setQuery] = useState('avengers')
-
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        const getData = async () => {
+           const response = await fetch(`http://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`)
+           const data = await response.json()
+
+           setMovies(data.Search)
+           setLoading(false)
+        }
+
         getData()
     }, [query])
-
-    const getData = async () => {
-        const response = await fetch(`http://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`)
-        const data = await response.json()
-
-        setMovies(data.Search)
-        setLoading(false)
-    }
 
 
     const getQuery = () => {
@@ -35,10 +34,24 @@ function MovieApp() {
         setSearch(search)
     }
 
+    const [isDark, setIsDark] = useState(false)
+
+    const bodyDarkMode = () => {
+        setIsDark(!isDark)
+    }
+
+
     return (
         <div className="movie-app app-container">
-            <div className="app">
-                <Header updateSearch={updateSearch} getQuery={getQuery}/>
+            <div
+                class="app"
+                style={{backgroundColor: isDark ? "#222222" : "" }}
+            >
+                <Header
+                    updateSearch={updateSearch}
+                    getQuery={getQuery}
+                    bodyDarkMode={bodyDarkMode}
+                />
                 {loading ? <div className="loading"></div> : <Movie movies={movies}/>}
             </div>
         </div>
