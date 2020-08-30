@@ -7,9 +7,9 @@ import FetchAPI from "./components/fetchAPI-app/FetchAPI.jsx";
 import Gsap from "./components/gsap-app/Gsap";
 import MovieApp from "./components/movie-app/MovieApp.jsx";
 import ClockApp from "./components/clock-app/ClockApp";
-// import Recipe from "./components/recipe-app/Recipe.jsx";
+import Recipe from "./components/recipe-app/Recipe.jsx";
 
-function App() {
+function App() { 
 
   return (
     <>
@@ -20,7 +20,7 @@ function App() {
       <ReactRouter/>
       <FetchAPI/>
       <Gsap/>
-      {/* <Recipe/> */}
+      <Recipe/>
     </>
   );
 }

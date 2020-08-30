@@ -4,11 +4,12 @@ import Header from './Header.jsx'
 
 function MovieApp() {
     const API_KEY = 75459931
-
+ 
     const [movies, setMovies] = useState([])
     const [search, setSearch] = useState('')
     const [query, setQuery] = useState('avengers')
     const [loading, setLoading] = useState(true)
+    const [isDark, setIsDark] = useState(false)
 
     useEffect(() => {
         const getData = async () => {
@@ -34,19 +35,17 @@ function MovieApp() {
         setSearch(search)
     }
 
-    const [isDark, setIsDark] = useState(false)
-
     const bodyDarkMode = () => {
         setIsDark(!isDark)
     }
 
-
+ 
     return (
         <div className="movie-app app-container">
             <div
-                class="app"
+                className="app"
                 style={{backgroundColor: isDark ? "#222222" : "" }}
-            >
+            > 
                 <Header
                     updateSearch={updateSearch}
                     getQuery={getQuery}

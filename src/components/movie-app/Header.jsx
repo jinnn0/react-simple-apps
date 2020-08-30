@@ -16,6 +16,6 @@ function Header({updateSearch, getQuery, bodyDarkMode}) {
             </div>
         </header>
     )
-}
-
+} 
+ 
 export default Header

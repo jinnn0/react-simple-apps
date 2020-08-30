@@ -10,7 +10,7 @@ function Search({updateSearch, getQuery}) {
     const handleInput = (e) => {
         updateSearch(e.target.value)
     }
-
+ 
     return (
         <form onSubmit={handleSubmit}>
             <input
