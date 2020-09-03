@@ -1,15 +1,15 @@
 .shopping-cart-app {
   .app {
-    max-height: 600px;
+    height: 550px;
   }
-
+  
   .cart-title {
     border-bottom: 2px solid rgba(67, 67, 67, 0.111);
     line-height: 7rem;
     font-size: 3rem;
     color: #343434d0;
   }
-
+ 
   .cart-items {
     height: 270px;
     list-style-type: none;

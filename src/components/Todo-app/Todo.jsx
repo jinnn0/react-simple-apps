@@ -37,7 +37,7 @@ function Todo() {
 
         setTodoLists(completUpdated)
     }
-
+  
     return (
         <div className="todo-app app-container">
             <div className="app">

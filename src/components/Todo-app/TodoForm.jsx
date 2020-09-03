@@ -18,7 +18,7 @@ function TodoForm({addTodo}) {
             setTodoItem({...todoItem, task: ""})
         }
     }
-
+ 
     return (
         <form className="add-todo" onSubmit={handleSubmit}>
             <input

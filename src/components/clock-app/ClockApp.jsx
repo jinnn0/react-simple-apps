@@ -55,7 +55,6 @@ function ClockApp() {
 
     const today = new Date()
     const todayName = today.toLocaleString('default', { month: 'long' })
-    console.log(todayName)
 
     return (
         <div className="clock-app app-container"

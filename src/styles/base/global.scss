@@ -20,6 +20,8 @@ body {
 
   .app-container {
     height: 100vh;
+    min-height: 700px;
+    min-width: 1000px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,8 +37,7 @@ body {
   }
 
   .app {
-    width: 100%;
-    max-width: 1000px;
+    width: 1000px;
     height: 65vh;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.07);
