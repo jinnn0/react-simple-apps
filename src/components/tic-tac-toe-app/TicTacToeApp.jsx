@@ -46,6 +46,7 @@ class TicTacToeApp extends React.Component {
 
       return (
         <div className="game-app app-container">
+          <h1 className="game-title">Tic Tac Toe!</h1>
             <div className="app">
                <div className="game-board">
                   <Board

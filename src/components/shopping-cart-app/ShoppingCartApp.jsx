@@ -9,7 +9,7 @@ let initialItems = [
 
 
 
-function Cart() {
+function ShoppingCartApp() {
   let initialState = JSON.parse(window.localStorage.getItem("items"));
   const [items, setItems] = useState(initialState || initialItems);
 
@@ -51,4 +51,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default ShoppingCartApp;

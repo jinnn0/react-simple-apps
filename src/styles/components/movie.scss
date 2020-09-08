@@ -1,6 +1,4 @@
-$movieBackgroundColor: #212121;
 $toggleModeBtnColor: #fecf9a;
-$toggleModeBtnDarkColor: #ffe5b8;
 
 .movie-app {
     min-height: 550px;
@@ -104,6 +102,11 @@ $toggleModeBtnDarkColor: #ffe5b8;
 
         .movie {
             cursor: pointer;
+            transition: transform .1s ease-in-out;
+
+            &:hover {
+                transform: scale(.97);
+            }
 
             .poster-container {
                 height: 80%;

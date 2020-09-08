@@ -4,7 +4,7 @@ import TodoItems from './TodoItems.jsx';
 
 const localStorageKey = "todo items"
 
-function Todo() {
+function TodoApp() {
     const [todoLists, setTodoLists] = useState([])
 
     useEffect(()=>{
@@ -60,4 +60,4 @@ function Todo() {
     )
 }
 
-export default Todo
+export default TodoApp

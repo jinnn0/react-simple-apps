@@ -93,8 +93,8 @@ class TaskApp extends React.Component{
         })
 
         return (
-            <div className="todo-app class-component app-container">
-                <h2>React class component</h2>
+            <div className="todo-app task-app app-container">
+                <h2 className="app-title">With React class component</h2>
 
                 <div className="container">
                     <div className="app">

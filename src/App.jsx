@@ -1,20 +1,19 @@
 import React from "react";
 import "./styles/App.scss";
 
-import Cart from "./components/shopping-cart-app/Cart.jsx";
-import Todo from "./components/todo-app/Todo.jsx";
+import ShoppingCartApp from "./components/shopping-cart-app/ShoppingCartApp.jsx";
+import TodoApp from "./components/todo-app/TodoApp.jsx";
 import ClockApp from "./components/clock-app/ClockApp";
 import MovieApp from "./components/movie-app/MovieApp.jsx";
 import TaskApp from "./components/task-app/TaskApp";
-
-import TicTacToeApp from "./components/game-app/TicTacToeApp";
+import TicTacToeApp from "./components/tic-tac-toe-app/TicTacToeApp";
 
 function App() {
 
   return (
     <>
-      <Cart/>
-      <Todo/>
+      <ShoppingCartApp/>
+      <TodoApp/>
       <ClockApp/>
       <MovieApp/>
       <TaskApp/>
