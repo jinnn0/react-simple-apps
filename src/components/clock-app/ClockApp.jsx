@@ -29,8 +29,8 @@ function ClockApp() {
             window.clearInterval(interval)
         }
 
-    }, [currentTime])
-  
+    })
+
     const updateTime = () => {
         const d = new Date()
         const day = days[d.getDay()].toUpperCase()
@@ -39,9 +39,9 @@ function ClockApp() {
         const second = d.getSeconds()
         const minute = Number(d.getMinutes())
         const hour = d.getHours()
-  
+
         const newTime = {
-            day: day, 
+            day: day,
             month: month,
             date: date,
             second: second,
@@ -51,22 +51,20 @@ function ClockApp() {
 
         setCurrentTime({...currentTime, ...newTime})
     }
-  
 
-    const today = new Date()
-    const todayName = today.toLocaleString('default', { month: 'long' })
+
 
     return (
         <div className="clock-app app-container"
              style={{visibility: isBodyLoaded ? "visible" : "hidden"}}
         >
-            <div className="app"> 
+            <div className="app">
                 <Clock currentTime={currentTime}/>
                 <ClockInfo currentTime={currentTime}/>
-            </div> 
+            </div>
         </div>
-    ) 
-}  
+    )
+}
 
 
 export default ClockApp

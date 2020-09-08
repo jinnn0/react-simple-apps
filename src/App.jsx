@@ -5,20 +5,22 @@ import Cart from "./components/shopping-cart-app/Cart.jsx";
 import Todo from "./components/todo-app/Todo.jsx";
 import ClockApp from "./components/clock-app/ClockApp";
 import MovieApp from "./components/movie-app/MovieApp.jsx";
-import Recipe from "./components/recipe-app/Recipe.jsx";
+import TaskApp from "./components/task-app/TaskApp";
 
+import TicTacToeApp from "./components/game-app/TicTacToeApp";
 
-function App() { 
-    
+function App() {
+
   return (
     <>
-      <Cart/> 
+      <Cart/>
       <Todo/>
       <ClockApp/>
       <MovieApp/>
-      <Recipe/> 
+      <TaskApp/>
+      <TicTacToeApp/>
     </>
   );
 }
-  
+
 export default App;

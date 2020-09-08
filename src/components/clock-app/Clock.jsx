@@ -22,4 +22,3 @@ function Clock({currentTime}) {
 }
 
 export default Clock
- 

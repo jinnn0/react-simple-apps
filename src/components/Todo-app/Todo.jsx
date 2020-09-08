@@ -8,7 +8,10 @@ function Todo() {
     const [todoLists, setTodoLists] = useState([])
 
     useEffect(()=>{
-        setTodoLists(JSON.parse(localStorage.getItem(localStorageKey)))
+        const storageTodoLists = JSON.parse(localStorage.getItem(localStorageKey))
+        if(storageTodoLists) {
+            setTodoLists(storageTodoLists)
+        }
     },[])
 
     useEffect(()=>{
@@ -37,7 +40,7 @@ function Todo() {
 
         setTodoLists(completUpdated)
     }
-  
+
     return (
         <div className="todo-app app-container">
             <div className="app">
