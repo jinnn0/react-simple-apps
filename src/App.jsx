@@ -7,6 +7,7 @@ import ClockApp from "./components/clock-app/ClockApp";
 import MovieApp from "./components/movie-app/MovieApp.jsx";
 import TaskApp from "./components/task-app/TaskApp";
 import TicTacToeApp from "./components/tic-tac-toe-app/TicTacToeApp";
+import TicTacToeAppWithHook from "./components/tic-tac-toe-app-hooks/TicTacToeAppWithHook";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <MovieApp/>
       <TaskApp/>
       <TicTacToeApp/>
+      <TicTacToeAppWithHook/>
     </>
   );
 }

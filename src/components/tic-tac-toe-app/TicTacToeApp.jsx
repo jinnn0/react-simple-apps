@@ -37,12 +37,13 @@ class TicTacToeApp extends React.Component {
       const status = winner ? ("Winner: " + winner) : ("Next player: " + nextPalyer)
 
       const moves = this.state.history.map((history, index) =>
-           index === 0 ? null : <li
+           index ? null : <li
                                   key={index}
                                   onClick={()=> this.jumpTo(index)}>
                                   go back to move #{index}
                                 </li>
       )
+
 
       return (
         <div className="game-app app-container">

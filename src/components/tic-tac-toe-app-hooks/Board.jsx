@@ -1,19 +1,18 @@
 import React from 'react'
 import Square from './Square.jsx'
 
-
-function Board({squares, handleClick }) {
+function Board({board, handleClick}) {
     return (
         <div className="board-grid">
-            {squares.map((square,index) => (
+            {board.map((square, index) => (
                 <Square
                     key={index}
-                    value={squares[index]}
+                    value={board[index]}
                     handleClick={()=> handleClick(index)}
-                 />
+                />
             ))}
         </div>
-    );
+    )
 }
 
 export default Board
