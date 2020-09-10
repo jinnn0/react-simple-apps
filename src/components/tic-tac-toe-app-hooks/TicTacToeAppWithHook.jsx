@@ -1,60 +1,72 @@
 import React, {useState} from 'react'
 import Board from './Board.jsx'
-import calculateWinner from '../tic-tac-toe-app/calculateHelper'
+import calculateWinner from './calculateHelper'
+import InfoDisplay from './InfoDisplay.jsx'
 
 function TicTacToeAppWithHook() {
-    const [boardHistory, setBoardHistory] = useState([Array(9).fill(null)])
-    const [move, setMove] = useState(boardHistory.length-1)
+    const [history, setHistory] = useState([{board: Array(9).fill(null), location: null}])
+    const [currenMove, setCurrentMove] = useState(0)
     const [isXNext, setIsXNext] = useState(true)
-    const winner = calculateWinner(boardHistory[move])
+    const [isAscending, setIsAscending] = useState(true)
+    const winner = calculateWinner(history[currenMove].board)
 
     const handleClick = (id) => {
-        const newHistory = boardHistory.slice(0, move + 1)
-        const current = newHistory[move]
-        const newBoard = [...current]
+        const locations = [
+            [1, 1],
+            [1, 2],
+            [1, 3],
+            [2, 1],
+            [2, 2],
+            [2, 3],
+            [3, 1],
+            [3, 2],
+            [3, 3]
+        ]
 
-        if(current[id] || winner) return
+        const newHistory = history.slice(0, currenMove + 1)
+        const currentBoard = newHistory[newHistory.length-1].board
+        const newBoard = [...currentBoard]
+
+        if(winner || newBoard[id]) return
+
         newBoard[id] = isXNext ? "X" : "O"
-        setBoardHistory([...newHistory, newBoard])
+        setHistory([...newHistory, {board: newBoard, location: locations[id]}])
         setIsXNext(!isXNext)
-        setMove(newHistory.length)
+        setCurrentMove(newHistory.length)
     }
 
     const jumpTo = (move) => {
-        setMove(move)
+        setCurrentMove(move)
         setIsXNext(((move % 2) === 0))
     }
 
-    const status = winner ? ("Winner : " + winner ) : "Next palyer: " + (isXNext ? "X" : "O")
-    const historyButtons = boardHistory.map((history, index) => {
-        const message = index ? "Go back to start" : `Go back to move #${index}`
-
-        return <li
-                  key={index}
-                  onClick={()=>jumpTo(index)}
-               >
-                 {message}
-                </li>
-    })
-
+    const sortMoves = () => {
+        setIsAscending(!isAscending)
+    }
 
     return (
         <div className="game-app app-container">
             <h1 className="game-title">Tic Tac Toe with hooks</h1>
             <div className="app">
-                <div className="game-board">
-                    <Board
-                        board={boardHistory[move]}
-                        handleClick={handleClick}
-                    />
-                </div>
-                <div className="game-info">
-                    <div className="status">{status}</div>
-                       <ol>{historyButtons}</ol>
-                </div>
+                <Board
+                    board={history[currenMove].board}
+                    handleClick={handleClick}
+                    winners={winner ? winner.winners : []}
+                />
+                <InfoDisplay
+                    history={history}
+                    winnerValue={winner ? winner.winnerValue : null}
+                    isXNext={isXNext}
+                    currenMove={currenMove}
+                    jumpTo={jumpTo}
+                    isAscending={isAscending}
+                    sortMoves={sortMoves}
+                />
             </div>
          </div>
     )
-}
+ }
+
 
 export default TicTacToeAppWithHook
+

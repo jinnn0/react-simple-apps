@@ -15,7 +15,7 @@ export default function calculateWinner(squares){
 
         if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
             console.log("winner..")
-            return squares[a]
+            return { winnerValue: squares[a], winners : [a,b,c] }
         }
     }
 
