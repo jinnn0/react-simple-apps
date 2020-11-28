@@ -1,12 +1,13 @@
 import React from 'react'
-import TicTacToeFunctionalSquare from './TicTacToeFunctionalSquare.jsx'
+import TicTacToeClassSquare from './TicTacToeClassSquare'
 
 
 function TicTacToeClassBoard({squares, handleClick }) {
+
     return (
         <div className="board-grid">
             {squares.map((square,index) => (
-                <TicTacToeFunctionalSquare
+                <TicTacToeClassSquare
                     key={index}
                     value={squares[index]}
                     handleClick={()=> handleClick(index)}

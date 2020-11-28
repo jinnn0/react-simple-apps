@@ -1,5 +1,5 @@
 import React from 'react'
-import TicTacToeClassBoard from './TicTacToeFunctionalBoard.jsx.js'
+import TicTacToeClassBoard from './TicTacToeClassBoard'
 import calculateWinner from './calculateHelper'
 
 class TicTacToeClass extends React.Component {
@@ -33,10 +33,9 @@ class TicTacToeClass extends React.Component {
       const nextPalyer = this.state.isXNext ? "X" : "O"
       const status = winner ? ("Winner: " + winner) : ("Next player: " + nextPalyer)
 
-
       return (
         <div className="ticTacToe app-container">
-          <h1 className="game-title">Tic Tac Toe - Functional component</h1>
+          <h1 className="game-title">Tic Tac Toe - Class component</h1>
             <div className="app">
                <div className="game-board">
                   <TicTacToeClassBoard
