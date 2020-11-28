@@ -1,7 +1,7 @@
 import React from 'react'
 import Search from './Search'
 
-function Header({updateSearch, getQuery, bodyDarkMode}) {
+function MovieSearchHeader({updateSearch, getQuery, bodyDarkMode}) {
     return (
         <header>
             <Search updateSearch={updateSearch} getQuery={getQuery}/>
@@ -18,4 +18,4 @@ function Header({updateSearch, getQuery, bodyDarkMode}) {
     )
 } 
  
-export default Header
+export default MovieSearchHeader

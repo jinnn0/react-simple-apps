@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import Clock from './Clock';
+import ClockBody from './ClockBody';
 import ClockInfo from './ClockInfo';
 
 const days = [ "Sunday", "Monday",  "Tuesday",  "Wednesday", "Thursday", "Friday", "Saturday"]
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-function ClockApp() {
+function Clock() {
     const [isBodyLoaded, setIsBodyLoaded] = useState(false)
     const [currentTime, setCurrentTime] = useState({
         hour : "",
@@ -55,11 +55,11 @@ function ClockApp() {
 
 
     return (
-        <div className="clock-app app-container"
+        <div className="clock app-container"
              style={{visibility: isBodyLoaded ? "visible" : "hidden"}}
         >
             <div className="app">
-                <Clock currentTime={currentTime}/>
+                <ClockBody currentTime={currentTime}/>
                 <ClockInfo currentTime={currentTime}/>
             </div>
         </div>
@@ -67,4 +67,4 @@ function ClockApp() {
 }
 
 
-export default ClockApp
+export default Clock

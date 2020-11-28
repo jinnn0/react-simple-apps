@@ -1,10 +1,10 @@
 import React from 'react'
-import Square from './Square.jsx'
+import TicTacToeFunctionalSquare from './TicTacToeFunctionalSquare.jsx'
 
-function Board({board, handleClick, winners}) {
+function TicTacToeFunctionalBoard({board, handleClick, winners}) {
 
     const renderSquare = (id) => {
-        return <Square
+        return <TicTacToeFunctionalSquare
                     key={id}
                     value={board[id]}
                     isWinner={winners.includes(id)}
@@ -32,4 +32,4 @@ function Board({board, handleClick, winners}) {
     )
 }
 
-export default Board
+export default TicTacToeFunctionalBoard

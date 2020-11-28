@@ -1,12 +1,12 @@
 import React from 'react'
-import Square from './Square.jsx'
+import TicTacToeFunctionalSquare from './TicTacToeFunctionalSquare.jsx'
 
 
-function Board({squares, handleClick }) {
+function TicTacToeClassBoard({squares, handleClick }) {
     return (
         <div className="board-grid">
             {squares.map((square,index) => (
-                <Square
+                <TicTacToeFunctionalSquare
                     key={index}
                     value={squares[index]}
                     handleClick={()=> handleClick(index)}
@@ -16,4 +16,4 @@ function Board({squares, handleClick }) {
     );
 }
 
-export default Board
+export default TicTacToeClassBoard

@@ -1,9 +1,9 @@
 import React from 'react'
-import TaskItems from './TaskItems';
-import TaskForm from './TaskForm';
-import TaskController from './TaskController';
+import TodoClassItem from './TodoClassItem';
+import TodoClassForm from './TodoClassForm';
+import TodoClassController from './TodoClassController';
 
-class TaskApp extends React.Component{
+class TodoClass extends React.Component{
     state = {
         todos: [],
         todosToShow : "all"
@@ -14,7 +14,7 @@ class TaskApp extends React.Component{
         if(sotredTodos){
             this.setState({todos: sotredTodos})
         }
-    }
+    } 
 
     updateLocalStorage = () => {
         localStorage.setItem('todos', JSON.stringify(this.state.todos))
@@ -93,20 +93,20 @@ class TaskApp extends React.Component{
         })
 
         return (
-            <div className="todo-app task-app app-container">
-                <h1 className="app-title">Class component todo app</h1>
+            <div className="todoClass todoFunctional app-container">
+                <h1 className="app-title">Todo - class component</h1>
 
-                <div className="container">
+                <div className="app-wrapper">
                     <div className="app">
                         <div className="title">
                             <i className="far fa-clipboard todo-icon"></i>
-                            Task Manager
+                            Todo
                         </div>
 
-                        <TaskForm addTodo={this.addTodo} />
+                        <TodoClassForm addTodo={this.addTodo} />
 
                         {todos.map(todo =>
-                            <TaskItems
+                            <TodoClassItem
                                 todo={todo}
                                 key={todo.id}
                                 completeTodo={this.completeTodo}
@@ -114,7 +114,7 @@ class TaskApp extends React.Component{
                         />)}
                     </div>
 
-                    <TaskController
+                    <TodoClassController
                         todos={this.state.todos}
                         handleTodosToShow={this.handleTodosToShow}
                         handleDeleteAllCompleted={this.handleDeleteAllCompleted}
@@ -125,4 +125,4 @@ class TaskApp extends React.Component{
     }
 }
 
-export default TaskApp
+export default TodoClass

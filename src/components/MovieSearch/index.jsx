@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import Movie from './Movie.jsx'
-import Header from './Header.jsx'
+import MovieSearchHeader from './MovieSearchHeader.jsx'
+import MovieItem from './MovieItem'
 
-function MovieApp() {
+function MovieSearch() {
     const API_KEY = 75459931
  
     const [movies, setMovies] = useState([])
@@ -41,20 +41,27 @@ function MovieApp() {
 
  
     return (
-        <div className="movie-app app-container">
+        <div className="movieSearch app-container">
             <div
                 className="app"
                 style={{backgroundColor: isDark ? "#222222" : "" }}
             > 
-                <Header
+                <MovieSearchHeader
                     updateSearch={updateSearch}
                     getQuery={getQuery}
                     bodyDarkMode={bodyDarkMode}
                 />
-                {loading ? <div className="loading"></div> : <Movie movies={movies}/>}
+
+                {loading ? <div className="loading"></div> : (
+                    <div className="movies">
+                        {movies.map(movie => (
+                            <MovieItem key={movie.imdbID} movie={movie}/>
+                         ))}
+                    </div>
+                )}
             </div>
         </div>
-    )
+    ) 
 }
 
-export default MovieApp
+export default MovieSearch

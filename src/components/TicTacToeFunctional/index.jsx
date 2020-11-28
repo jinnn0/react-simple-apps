@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import Board from './Board.jsx'
+import TicTacToeFunctionalBoard from './TicTacToeFunctionalBoard.jsx'
 import calculateWinner from './calculateHelper'
-import InfoDisplay from './InfoDisplay.jsx'
+import TicTacToeFunctionalInfoDisplay from './TicTacToeFunctionalInfoDisplay.jsx'
 
-function TicTacToeAppWithHook() {
+function TicTacToeFunctional() {
     const [history, setHistory] = useState([{board: Array(9).fill(null), location: null}])
     const [currenMove, setCurrentMove] = useState(0)
     const [isXNext, setIsXNext] = useState(true)
@@ -15,7 +15,7 @@ function TicTacToeAppWithHook() {
             [1, 1],
             [1, 2],
             [1, 3],
-            [2, 1],
+            [2, 1], 
             [2, 2],
             [2, 3],
             [3, 1],
@@ -45,15 +45,15 @@ function TicTacToeAppWithHook() {
     }
 
     return (
-        <div className="game-app app-container">
-            <h1 className="game-title">Tic Tac Toe with hooks</h1>
+        <div className="ticTacToe app-container">
+            <h1 className="game-title">Tic Tac Toe - Functional component</h1>
             <div className="app">
-                <Board
+                <TicTacToeFunctionalBoard
                     board={history[currenMove].board}
                     handleClick={handleClick}
                     winners={winner ? winner.winners : []}
                 />
-                <InfoDisplay
+                <TicTacToeFunctionalInfoDisplay
                     history={history}
                     winnerValue={winner ? winner.winnerValue : null}
                     isXNext={isXNext}
@@ -68,5 +68,5 @@ function TicTacToeAppWithHook() {
  }
 
 
-export default TicTacToeAppWithHook
+export default TicTacToeFunctional
 

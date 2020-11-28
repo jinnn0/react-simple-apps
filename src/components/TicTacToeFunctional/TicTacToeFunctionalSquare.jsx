@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Square({value, isWinner, handleClick}) {
+function TicTacToeClassSquare({value, isWinner, handleClick}) {
     return (
         <div
             className={"square" + (isWinner ? " winner" : "")}
@@ -11,4 +11,4 @@ function Square({value, isWinner, handleClick}) {
     )
 }
 
-export default Square
+export default TicTacToeClassSquare

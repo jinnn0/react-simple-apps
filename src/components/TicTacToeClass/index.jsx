@@ -1,14 +1,14 @@
 import React from 'react'
-import Board from './Board.jsx'
+import TicTacToeClassBoard from './TicTacToeFunctionalBoard.jsx.js'
 import calculateWinner from './calculateHelper'
 
-class TicTacToeApp extends React.Component {
+class TicTacToeClass extends React.Component {
     state={
       history: [Array(9).fill(null)],
       isXNext: true,
       currentMove: 0
     }
-
+ 
     handleClick = (id) => {
       const history = this.state.history.slice(0, this.state.currentMove + 1)
       const current = history[this.state.currentMove]
@@ -35,11 +35,11 @@ class TicTacToeApp extends React.Component {
 
 
       return (
-        <div className="game-app app-container">
-          <h1 className="game-title">Tic Tac Toe!</h1>
+        <div className="ticTacToe app-container">
+          <h1 className="game-title">Tic Tac Toe - Functional component</h1>
             <div className="app">
                <div className="game-board">
-                  <Board
+                  <TicTacToeClassBoard
                     squares={current}
                     handleClick={this.handleClick}
                    />
@@ -53,4 +53,4 @@ class TicTacToeApp extends React.Component {
     }
 }
 
-export default TicTacToeApp
+export default TicTacToeClass

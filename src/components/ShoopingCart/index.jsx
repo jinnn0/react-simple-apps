@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CartItem from "./CartItem";
+import ShoopingCartItem from "./ShoopingCartItem";
 
 let initialItems = [
   { id: 1, name: "Salmon", price: 3.99, qty: 0},
@@ -9,7 +9,7 @@ let initialItems = [
 
 
 
-function ShoppingCartApp() {
+function ShoopingCart() {
   let initialState = JSON.parse(window.localStorage.getItem("items"));
   const [items, setItems] = useState(initialState || initialItems);
 
@@ -33,12 +33,12 @@ function ShoppingCartApp() {
     .toFixed(2);
 
   return (
-    <div className="shopping-cart-app app-container">
+    <div className="shoppingCart app-container">
       <div className="app">
         <h1 className="cart-title">Shopping Cart</h1>
         <ul className="cart-items">
           {items.map((item) => (
-            <CartItem key={item.id} updateQty={updateQty} {...item} />
+            <ShoopingCartItem key={item.id} updateQty={updateQty} {...item} />
           ))}
         </ul>
 
@@ -51,4 +51,4 @@ function ShoppingCartApp() {
   );
 }
 
-export default ShoppingCartApp;
+export default ShoopingCart;

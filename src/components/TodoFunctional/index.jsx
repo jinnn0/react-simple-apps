@@ -4,7 +4,7 @@ import TodoItems from './TodoItems.jsx';
 
 const localStorageKey = "todo items"
 
-function TodoApp() {
+function TodoFunctional() {
     const [todoLists, setTodoLists] = useState([])
 
     useEffect(()=>{
@@ -12,7 +12,7 @@ function TodoApp() {
         if(storageTodoLists) {
             setTodoLists(storageTodoLists)
         }
-    },[])
+    },[]) 
 
     useEffect(()=>{
         localStorage.setItem(localStorageKey, JSON.stringify(todoLists))
@@ -42,7 +42,8 @@ function TodoApp() {
     }
 
     return (
-        <div className="todo-app app-container">
+        <div className="todoFunctional app-container">
+            <h1> Todo - Functional component</h1>
             <div className="app">
                 <div className="title">
                     <i className="far fa-clipboard todo-icon"></i>
@@ -60,4 +61,4 @@ function TodoApp() {
     )
 }
 
-export default TodoApp
+export default TodoFunctional

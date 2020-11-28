@@ -1,6 +1,6 @@
 import React from "react";
 
-function CartItem({ id, name, price, qty, updateQty }) {
+function ShoopingCartItem({ id, name, price, qty, updateQty }) {
   function decrementQty() {
     updateQty(id, qty - 1);
   }
@@ -25,4 +25,4 @@ function CartItem({ id, name, price, qty, updateQty }) {
   );
 }
 
-export default CartItem;
+export default ShoopingCartItem;

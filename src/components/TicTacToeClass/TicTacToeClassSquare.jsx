@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Square({value, handleClick}) {
+function TicTacToeClassSquare({value, handleClick}) {
     return (
         <button
             className="square"
@@ -11,4 +11,4 @@ function Square({value, handleClick}) {
     )
 }
 
-export default Square
+export default TicTacToeClassSquare

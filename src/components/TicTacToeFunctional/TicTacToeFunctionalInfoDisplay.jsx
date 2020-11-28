@@ -1,7 +1,7 @@
 import React from 'react'
 import HistoryButton from './HistoryButtons.jsx'
 
-function InfoDisplay({winnerValue, isXNext, history, currenMove, isAscending, jumpTo, sortMoves}) {
+function TicTacToeFunctionalInfoDisplay({winnerValue, isXNext, history, currenMove, isAscending, jumpTo, sortMoves}) {
     let status;
     let currentBoard = history[history.length-1].board
     if(winnerValue) {
@@ -41,4 +41,4 @@ function InfoDisplay({winnerValue, isXNext, history, currenMove, isAscending, ju
     )
 }
 
-export default InfoDisplay
+export default TicTacToeFunctionalInfoDisplay
